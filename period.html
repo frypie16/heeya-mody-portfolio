@@ -2,7 +2,7 @@
 <html lang="en" data-predefined-style="true" data-css-presets="true" data-css-preset data-typography-preset>
 	<head>
 
-        <title>Heeya Mody | Naiad</title>
+        <title>Heeya Mody | Period.</title>
 
 				<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1837333-7"></script>
 			<script>
@@ -45,11 +45,19 @@
 
     <body data-bodyview="" style="visibility: hidden;">
 		
-		
-
 		<script>
 			window.scrollMonitor=function(){var t,i,o,e,s,n=function(){return window.pageYOffset||document.documentElement&&document.documentElement.scrollTop||document.body.scrollTop},h={},c=[],l="visibilityChange",r="enterViewport",a="fullyEnterViewport",p="exitViewport",w="partiallyExitViewport",u="locationChange",m="stateChange",f=[l,r,a,p,w,u,m],d={top:0,bottom:0},b=function(){return window.innerHeight||document.documentElement.clientHeight},v=function(){return Math.max(document.body.scrollHeight,document.documentElement.scrollHeight,document.body.offsetHeight,document.documentElement.offsetHeight,document.documentElement.clientHeight)};function g(){if(h.viewportTop=n(),h.viewportBottom=h.viewportTop+h.viewportHeight,h.documentHeight=v(),h.documentHeight!==t){for(o=c.length;o--;)c[o].recalculateLocation();t=h.documentHeight}}function V(){h.viewportHeight=b(),g(),k()}function I(){clearTimeout(e),e=setTimeout(V,100)}function k(){for(s=c.length;s--;)c[s].update();for(s=c.length;s--;)c[s].triggerCallbacks()}function y(t,o){var e,s,n,c,b,v,g=this;this.watchItem=t,this.offsets=o?o===+o?{top:o,bottom:o}:{top:o.top||d.top,bottom:o.bottom||d.bottom}:d,this.callbacks={};for(var V=0,I=f.length;V<I;V++)g.callbacks[f[V]]=[];function k(t){if(0!==t.length)for(b=t.length;b--;)(v=t[b]).callback.call(g,i),v.isOne&&t.splice(b,1)}this.locked=!1,this.triggerCallbacks=function(){switch(this.isInViewport&&!e&&k(this.callbacks[r]),this.isFullyInViewport&&!s&&k(this.callbacks[a]),this.isAboveViewport!==n&&this.isBelowViewport!==c&&(k(this.callbacks[l]),s||this.isFullyInViewport||(k(this.callbacks[a]),k(this.callbacks[w])),e||this.isInViewport||(k(this.callbacks[r]),k(this.callbacks[p]))),!this.isFullyInViewport&&s&&k(this.callbacks[w]),!this.isInViewport&&e&&k(this.callbacks[p]),this.isInViewport!==e&&k(this.callbacks[l]),!0){case e!==this.isInViewport:case s!==this.isFullyInViewport:case n!==this.isAboveViewport:case c!==this.isBelowViewport:k(this.callbacks[m])}e=this.isInViewport,s=this.isFullyInViewport,n=this.isAboveViewport,c=this.isBelowViewport},this.recalculateLocation=function(){if(!this.locked){var t=this.top,i=this.bottom;if(this.watchItem.nodeName){var o=this.watchItem.style.display;"none"===o&&(this.watchItem.style.display="");var e=this.watchItem.getBoundingClientRect();this.top=e.top+h.viewportTop,this.bottom=e.bottom+h.viewportTop,"none"===o&&(this.watchItem.style.display=o)}else this.watchItem===+this.watchItem?this.watchItem>0?this.top=this.bottom=this.watchItem:this.top=this.bottom=h.documentHeight-this.watchItem:(this.top=this.watchItem.top,this.bottom=this.watchItem.bottom);this.top-=this.offsets.top,this.bottom+=this.offsets.bottom,this.height=this.bottom-this.top,void 0===t&&void 0===i||this.top===t&&this.bottom===i||k(this.callbacks[u])}},this.recalculateLocation(),this.update(),e=this.isInViewport,s=this.isFullyInViewport,n=this.isAboveViewport,c=this.isBelowViewport}h.viewportTop=null,h.viewportBottom=null,h.documentHeight=null,h.viewportHeight=b(),y.prototype={on:function(t,o,e){switch(!0){case t===l&&!this.isInViewport&&this.isAboveViewport:case t===r&&this.isInViewport:case t===a&&this.isFullyInViewport:case t===p&&this.isAboveViewport&&!this.isInViewport:case t===w&&this.isAboveViewport:if(o.call(this,i),e)return}if(!this.callbacks[t])throw new Error("Tried to add a scroll monitor listener of type "+t+". Your options are: "+f.join(", "));this.callbacks[t].push({callback:o,isOne:e||!1})},off:function(t,i){if(!this.callbacks[t])throw new Error("Tried to remove a scroll monitor listener of type "+t+". Your options are: "+f.join(", "));for(var o,e=0;o=this.callbacks[t][e];e++)if(o.callback===i){this.callbacks[t].splice(e,1);break}},one:function(t,i){this.on(t,i,!0)},recalculateSize:function(){this.height=this.watchItem.offsetHeight+this.offsets.top+this.offsets.bottom,this.bottom=this.top+this.height},update:function(){this.isAboveViewport=this.top<h.viewportTop,this.isBelowViewport=this.bottom>h.viewportBottom,this.isInViewport=this.top<=h.viewportBottom&&this.bottom>=h.viewportTop,this.isFullyInViewport=this.top>=h.viewportTop&&this.bottom<=h.viewportBottom||this.isAboveViewport&&this.isBelowViewport},destroy:function(){var t=c.indexOf(this);c.splice(t,1);for(var i=0,o=f.length;i<o;i++)this.callbacks[f[i]].length=0},lock:function(){this.locked=!0},unlock:function(){this.locked=!1}};for(var H=function(t){return function(i,o){this.on.call(this,t,i,o)}},E=0,T=f.length;E<T;E++){var B=f[E];y.prototype[B]=H(B)}try{g()}catch(t){try{window.$(g)}catch(t){throw new Error("If you must put scrollMonitor in the <head>, you must use jQuery.")}}function A(t){i=t,g(),k()}return"#throttle-scroll-monitor"===window.location.hash&&(A=_.throttle(A,66)),window.addEventListener?(window.addEventListener("scroll",A),window.addEventListener("resize",I)):(window.attachEvent("onscroll",A),window.attachEvent("onresize",I)),h.beget=h.create=function(t,i){"string"==typeof t?t=document.querySelector(t):t&&t.length>0&&(t=t[0]);var o=new y(t,i);return c.push(o),o.update(),o},h.update=function(){i=null,g(),k()},h.recalculateLocations=function(){h.documentHeight=0,h.update()},h}();
 		</script>
+
+		<customhtml></customhtml>		
+		<div class="loading" data-loading="page">
+<div class="loading_animation pulsing <%= extra_class %> ">
+	<div>
+		<svg class="loading" width="500" height="500" viewbox="0 0 500 500">
+		      <path d="M495,201.19a257.61,257.61,0,0,0-14.19-47.05,260.51,260.51,0,0,0-23.17-42.9,253.09,253.09,0,0,0-69.06-68.85,245.21,245.21,0,0,0-42.88-23A227.1,227.1,0,0,0,298.88,5.26,241.81,241.81,0,0,0,249.5.31V0C111.7,0,0,111.7,0,249.5H.32a242.23,242.23,0,0,0,4.93,49.36A227.43,227.43,0,0,0,19.82,345a247.09,247.09,0,0,0,23,43,253.65,253.65,0,0,0,68.87,68.85,260.28,260.28,0,0,0,43,23.19,258.59,258.59,0,0,0,47,14.17,254.37,254.37,0,0,0,47.86,4.69V499c7.64,0,15.16-.47,22.62-1.14.88-.08,1.77-.05,2.66-.14,1.3-.13,2.56-.41,3.86-.56,6.82-.77,13.63-1.66,20.42-3A255.67,255.67,0,0,0,345.86,480a246.52,246.52,0,0,0,42.95-23.19A253.15,253.15,0,0,0,457.64,388a246.55,246.55,0,0,0,23.21-43A256.9,256.9,0,0,0,495,298.19a250.34,250.34,0,0,0,4.71-48.69A246.63,246.63,0,0,0,495,201.19ZM484.14,249.5H249.5V483.27a238.72,238.72,0,0,1-44.83-4.37,245.21,245.21,0,0,1-44-13.26,246.55,246.55,0,0,1-40.28-21.75,237.64,237.64,0,0,1-64.61-64.62,231.25,231.25,0,0,1-21.6-40.37,212.18,212.18,0,0,1-13.63-43.15,226.46,226.46,0,0,1-4.61-46.25H249.5V15.92c.2,0,.39,0,.59,0a227.57,227.57,0,0,1,45.79,4.67,212.11,212.11,0,0,1,43.79,13.26,228.85,228.85,0,0,1,40.22,21.52,237.92,237.92,0,0,1,64.82,64.6,246.65,246.65,0,0,1,21.72,40.2,243.26,243.26,0,0,1,13.28,44.09,231,231,0,0,1,4.43,45.26Z"/>
+		</svg>
+	</div>
+</div>		</div>
 		
 		<div 
 	id="site_menu_wrapper" class=" mobile_only" 
@@ -87,55 +95,157 @@
 				
 				<div class="page_content clearfix" data-elementresizer data-resize-parent>
 					<projectcontent><div grid-row="" grid-pad="2.5" grid-gutter="5" grid-responsive="">
-	<div grid-col="x11" grid-pad="2.5"><hr><small>Naiad&nbsp; &nbsp; &nbsp; &nbsp; 2022<br></small><br>
-<hr>Unity, C#, Houdini, Physical Computing, 3D Printing<br>
+	<div grid-col="x11" grid-pad="2.5"><hr><small>Period.&nbsp; &nbsp; &nbsp; &nbsp; 2020</small><br>
+<hr>A series of developments involving different mediums<br>
 <hr>
-    
     <small>
-
         <br>
-        <font size="-1" class="tab-double">In collaboration with Leo Dastur, Malin Mabika, Iann Gonzalez, and Percy Simons</font>
+        <font size="-1" class="tab-double">In collaboration with Sania Necoechea Dellekamp and Ha Na Sung</font>
 
         <br><br>
         
-        ...
-
-    </small>
-    <br>
-    
-    </div>
-
+        The purpose of the project is to normalize and expose menstruation as 
+        a locus of societal stigma, with the mission to diminish the shame woman 
+        feel about their periods and their need to hide this natural, universal process.
+        <br> <br>
+        There are many issues surrounding menstruation: climate change, lack of access 
+        to clean pads or tampons in developing countries, price of sanitary pads etc. 
+        However, the root of these problems is that we are too embarrassed to talk 
+        about this topic.</small><br></div>
 	<div grid-col="x11" grid-pad="2.5"></div>
-</div>
+</div><br><br>
+            
 
-<br>
-<br>
-<br>
-            
-            
-      <p><b>Process</b></p>
-            
-            <p>
-                <i>Coming soon.</i>
-            </p>
-            
-<br>
-<br>
-          <p><b>Reflection</b></p>
+        <p><b>Initial Exploration</b></p>
+
+        <iframe
+          width="405px"
+          height="445px"
+          src="https://editor.p5js.org/frypie16/embed/fgqtlbTd_"
+        ></iframe>
+        
+        <br>
 
             <p>
-              <i>Coming soon.</i>
-            </p>  
+                One of the most natural ways to keep track of time is through the menstruation cycle. Hence, I depicted it as a clock, where the starting point is the menstruating days. I chose a color scheme that fits in with this topic to further enforce its presence and allow it to be normalized.<br><br>
+
+                By exposing the menstruation cycle in this manner, this exploration aims to normalize the idea of it.<br><br>
+
+                The p5 project was created based on my own cycle. In the future, I may want to incorporate an interactive aspect, where users can put in their previous dates in relation to menstruation and keep track of their cycle. This will create a community of people, united through this natural process.
+        </p>
+<br>
+<br>
+<br>
+
+        <p><font size="4">"LET'S TALK ABOUT IT."</font></p>
+
+        <p>
+            The project and concept developed from a code sketch exploration of the concept into a collaboration with Sania Necoechea Dellekamp and Ha Na Sung.<br><br>
+
+            We decided to conduct a site intervention to raise awareness as an effort to normalize it. There is a stigma associated with menstruation, although it is one of the most natural processes, and so, with the intervention, we aim to encourage people to <b>talk about it</b>.
+        </p>
 
 <br>
 <br>
 
-          <p><b>Future Iterations</b></p>
+        <p><b>Site Intervention</b></p>
 
-            <p>
-              <i>Coming soon.</i>
-            </p>
+        <p>
+            We chose Washington Square Park in Manhattan as our site- a public place where we could turn something very private into something public. The park is usually always populated with people, and is known for being a hub to forward-thinking ideas, making it the perfect place for us to situate our project.<br><br>
 
+            We planned to hold our performance on the grassy areas of the park rather than the fountain. We wanted be surrounded by nature to reinforce our message that periods are natural and should be treated as such.<br><br>
+
+            <img alt="Washington Square Park Map" src="period/washingtonmap.png" width=33.7%><br><br>
+
+            We designed and stitched together a piece of clothing to be worn by one of us during the intervention. It took the form of a fitted dress, which we covered in pads to accentuate the form and curves.<br><br>
+
+            <img alt="Pad Dress Sketch" src="period/paddress_sketch.png" width=33.7%>
+            <img alt="Final Pad Dress" src="period/paddress.png" width=40.5%>
+        </p>
+
+<br>
+<br>
+
+        <p><b>"Let's Talk About It."</b></p>
+
+        <iframe src="https://drive.google.com/file/d/1b8jU1dsErxmHo0oPAsADpMweUjvPZzX3/preview" 
+            width=100% height=55% allow="autoplay">
+        </iframe>
+
+        <br>
+        <br>
+        <br>
+
+        <p>
+            <img alt="Site Intervention Close Up" src="period/site-specific-singular.png" width=33.7%>
+
+            <img alt="Site Intervention Handouts" src="period/site-specific-handout.png" width=37.5%><br><br>
+            
+            These are the cards we designed and printed to hand out at the intervention. It includes an overview of our aim to destigmatize menstruation and our instagram handle for more on the topic.
+        </p>
+
+<br>
+<br>
+
+        <p><b>Speculative Intervention</b></p>
+
+        <p>
+            Ideally, we would want to have more global impact than a small-scale Washington Square Park intervention. More importantly, we would want to provide resources along with spreading the word to normalize the topic. In acknowledging the issues of accessibility that lie with menstruation products due to geographic location and "pink tax", we designed a speculative intervention where transparent 'free pad stations' would be located all around. The transparency is to expose the issues that lie behind menstruation and its stigma as an effort to normalize and a step in addressing the issues.
+        </p>
+
+        <div class="image-grid">
+            <img class="image-grid-row-2 image-grid-col-2" alt="Free Pad Station" src="period/specintervention1.png">
+            <img alt="Free Pad Station" src="period/specintervention2.png"><br>
+            <img alt="Free Pad Station" src="period/specintervention3.png">
+        </div>
+
+<br>
+<br>
+
+        <p><b>The Zine</b></p>
+
+        <iframe src="https://drive.google.com/file/d/10JtFnaOokatiEY-XIgKFLHgXkzLOy-JQ/preview" width=100% height=70%></iframe>
+
+<br>
+<br>
+
+        <p><b>Instagram</b></p>
+
+        <a href="https://www.instagram.com/letstalk.period/" target="_blank" rel="noopener noreferrer">
+            <img alt="Instagram" src="period/periodinsta1.png" width="60%">
+        </a>
+        <br>
+        
+            <img alt="Instagram Comments" src="period/comment1.jpg" width=15%>
+            <img alt="Instagram Comments" src="period/comment2.jpg" width=15%>
+            <img alt="Instagram Comments" src="period/comment3.jpg" width=15%>
+            <img alt="Instagram Comments" src="period/comment4.jpg" width=14.95%>
+        
+
+        <a href="https://www.instagram.com/letstalk.period/" target="_blank" rel="noopener noreferrer">
+            <img alt="Instagram" src="period/periodinsta2.png" width="60%">
+        </a>
+
+        <p>
+            <a href="https://www.instagram.com/letstalk.period/" target="_blank" rel="noopener noreferrer">
+                <img border="0" src="about/insta.png" width="20" height="20">
+            </a>
+
+            &nbsp;instagram dedicated to normalizing menstruation
+        </p>
+
+<br>
+<br>
+
+        <div class="image-grid">
+            <img class="image-grid-row-3" alt="Instagram Story" src="period/share.jpeg" width=26.75%>
+            <img alt="Free Pads Instead of Condoms" src="period/intervention2.jpg">
+            <img alt="Free Pads In Dorms Instead of Condoms" src="period/pads.jpeg">
+            <img alt="Period Line" src="period/paddress1.jpg">
+            <img class="image-grid-row-2" alt="Story Response" src="period/storyresponse.PNG">
+            <img class="image-grid-row-2" alt="Intervention" src="period/intervention3.jpg">
+            <img class="image-grid-row-2" alt="Intervention" src="period/padsindorm.jpeg">
+        </div>
 
 <br>
 <br>
